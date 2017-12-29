@@ -8,7 +8,7 @@
   GatewayService.$inject = ['$log', '$q', '$cookies', '$http'];
   /** @ngInject */
   function GatewayService($log, $q, $cookies, $http) {
-    var baseUrl = "http://localhost:4011";
+    var baseUrl = "http://api.adult.greyphase.xyz";
     return {
       getData: function(data) {
         var promise = $q.defer();
@@ -44,4 +44,4 @@
       }
     }
   }
-})()
+})();

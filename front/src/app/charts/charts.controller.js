@@ -64,5 +64,5 @@
         })
     };
     $scope.funcs.getCount($scope.obj.type);
-  }
+  };
 })();
