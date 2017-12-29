@@ -1,0 +1,73 @@
+
+  <div class="uk-margin">
+    <nav class="uk-navbar-container uk-margin" uk-navbar>
+      <div class="uk-navbar-left">
+          <a class="uk-navbar-item uk-logo" href="#">Adults Dataset</a>
+          <ul class="uk-navbar-nav">
+            <li>
+                <a ui-sref="charts">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: table"></span>
+                    Charts
+                </a>
+            </li>
+            <li>
+                <a ui-sref="data">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: album"></span>
+                    Data
+                </a>
+            </li>
+        </ul>
+
+      </div>
+    </nav>
+    <hr>
+    <div class="uk-padding">
+
+      <label class="marg-r-20"><input class="uk-checkbox" ng-change="funcs.getPage()" ng-model="selection.relationship" type="checkbox" checked> RELATONSHIP</label> &nbsp;&nbsp;&nbsp;
+      <select ng-change="funcs.getPage()" class="uk-select wid200" ng-model="obj.filterRelationship" ng-if="selection.relationship">
+        <option  ng-repeat="relationships in obj.relationship" ng-bind="relationships" ng-value="relationships"></option>
+      </select>
+
+      <label class="marg-r-20"><input class="uk-checkbox" ng-change="funcs.getPage()" ng-model="selection.race" type="checkbox"> RACE</label> &nbsp;&nbsp;&nbsp;
+      <select ng-change="funcs.getPage()" class="uk-select wid200" ng-model="obj.filterRace" ng-if="selection.race">
+        <option  ng-repeat="races in obj.race" ng-bind="races" ng-value="races"></option>
+      </select>
+
+      <label class="marg-r-20"><input class="uk-checkbox" ng-change="funcs.getPage()" ng-model="selection.sex" type="checkbox"> SEX</label> &nbsp;&nbsp;&nbsp;
+      <select ng-change="funcs.getPage()" class="uk-select wid200" ng-model="obj.filterSex" ng-if="selection.sex">
+        <option  ng-repeat="sexs in obj.sex" ng-bind="sexs" ng-value="sexs"></option>
+      </select>
+
+      <div class="float-right">
+        <button class="uk-button uk-button-default" ng-click="funcs.getPage('prev')">
+          <span uk-icon="icon: chevron-left"></span>
+          PREV
+        </button>
+        PAGE {{(obj.skip/obj.limit)+1}}
+        <button class="uk-button uk-button-default" ng-click="funcs.getPage('next')">
+          NEXT
+          <span uk-icon="icon: chevron-right"></span>
+        </button>
+      </div>
+
+      <br>
+      <br>
+       <input class="uk-input search" type="text" placeholder="SEARCH ..." ng-model="obj.searchFilter">
+    </div>
+    <hr>
+    <div class="uk-padding">
+      <table class="uk-table uk-table-small uk-table-divider">
+        <thead>
+            <tr>
+                <th ng-repeat="h in obj.heads" ng-bind="h"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="d in obj.data | filter:obj.searchFilter">
+                <td class="uk-text-center" ng-repeat="h in obj.heads" ng-bind="d[h]"></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>

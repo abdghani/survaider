@@ -1,0 +1,49 @@
+
+  <div class="uk-margin">
+    <nav class="uk-navbar-container uk-margin" uk-navbar>
+      <div class="uk-navbar-left">
+          <a class="uk-navbar-item uk-logo" href="#">Adults Dataset</a>
+          <ul class="uk-navbar-nav">
+            <li>
+                <a ui-sref="charts">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: table"></span>
+                    Charts
+                </a>
+            </li>
+            <li>
+                <a ui-sref="data">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: album"></span>
+                    Data
+                </a>
+            </li>
+        </ul>
+
+      </div>
+    </nav>
+    <div class="uk-container">
+      <div class="uk-padding">
+        <div uk-grid>
+          <div class="uk-width-auto@m">
+            <ul class="uk-tab-left" uk-tab="connect: #component-tab-left; animation: uk-animation-fade">
+              <li ng-repeat="selection in obj.possibleSelections" ng-click="funcs.changeType(selection)"><a href="#">{{selection}}</a></li>
+            </ul>
+          </div>
+          <div class="uk-width-expand@m">
+            <ul id="component-tab-left" class="uk-switcher">
+              <li ng-repeat="selection in obj.possibleSelections" >
+                <a href="#">
+                  <div class="uk-padding">
+                    <div google-chart chart="myChartObject1" style="height:400px; width:100%;"></div>
+                    <div google-chart chart="myChartObject2" style="height:400px; width:100%;"></div>
+                    <div google-chart chart="myChartObject3" style="height:500px; width:100%;"></div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+    -->
+  </div>
