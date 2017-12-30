@@ -1,7 +1,7 @@
 # Survaider Assignment
 >  DEMO
 
-[adult.greyphase.xyz](adult.greyphase.xyz)
+[adult.greyphase.xyz](http://adult.greyphase.xyz)
 
 
 >  DATASET
