@@ -75,6 +75,7 @@ server{
   }
 }
 ```
+### LOAD BALANCING AND PROXY PASSING
 A pool(4021,4022) is created and name `backend` . Caching path is defined as `/var/cache/nginx/tag` . Every unique request is cached based on `url , querystring and body` to the directory mentioned above . All the api calls with /api are proxy passed to the api pool . Nginx is built to handle many concurrent connections at the same time. This makes it ideal for being the point-of-contact for clients. The server can pass requests to any number of backend servers to handle the bulk of the work, which spreads the load across your infrastructure. This design also provides you with flexibility in easily adding backend servers or taking them down as needed for maintenance.
 
 
