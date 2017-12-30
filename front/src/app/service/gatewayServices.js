@@ -8,7 +8,7 @@
   GatewayService.$inject = ['$log', '$q', '$cookies', '$http'];
   /** @ngInject */
   function GatewayService($log, $q, $cookies, $http) {
-    var baseUrl = "http://api.adult.greyphase.xyz";
+    var baseUrl = "http://api.adultdataset.greyphase.xyz";
     return {
       getData: function(data) {
         var promise = $q.defer();

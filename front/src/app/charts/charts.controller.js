@@ -17,15 +17,19 @@
     $scope.myChartObject1.type = "PieChart";
     $scope.myChartObject2.type = "BarChart";
     $scope.myChartObject3.type = "ColumnChart";
-    $scope.myChartObject1.options = {
-      'title': 'Pie Chart for ' + $scope.obj.type + ' distribution'
+
+    $scope.funcs.updateTitle = function(type) {
+      $scope.myChartObject1.options = {
+        'title': 'Pie Chart for ' + type + ' distribution'
+      };
+      $scope.myChartObject2.options = {
+        'title': 'Bar Chart for ' + type + ' distribution'
+      };
+      $scope.myChartObject3.options = {
+        'title': 'Column Chart for ' + type + ' distribution'
+      };
     };
-    $scope.myChartObject2.options = {
-      'title': 'Bar Chart for ' + $scope.obj.type + ' distribution'
-    };
-    $scope.myChartObject3.options = {
-      'title': 'Column Chart for ' + $scope.obj.type + ' distribution'
-    };
+
     $scope.obj.cols = [{
       id: "t",
       label: "Type",
@@ -60,9 +64,10 @@
           $scope.myChartObject1.data.rows = res.data;
           $scope.myChartObject2.data.rows = res.data;
           $scope.myChartObject3.data.rows = res.data;
-          console.log("data");
+          $scope.funcs.updateTitle(type);
         })
     };
     $scope.funcs.getCount($scope.obj.type);
+    $scope.funcs.updateTitle($scope.obj.type);
   };
 })();

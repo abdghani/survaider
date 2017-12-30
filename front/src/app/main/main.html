@@ -26,17 +26,17 @@
       <label class="marg-r-20"><input class="uk-checkbox" ng-change="funcs.getPage()" ng-model="selection.relationship" type="checkbox" checked> RELATONSHIP</label> &nbsp;&nbsp;&nbsp;
       <select ng-change="funcs.getPage()" class="uk-select wid200" ng-model="obj.filterRelationship" ng-if="selection.relationship">
         <option  ng-repeat="relationships in obj.relationship" ng-bind="relationships" ng-value="relationships"></option>
-      </select>
+      </select>&nbsp;
 
       <label class="marg-r-20"><input class="uk-checkbox" ng-change="funcs.getPage()" ng-model="selection.race" type="checkbox"> RACE</label> &nbsp;&nbsp;&nbsp;
       <select ng-change="funcs.getPage()" class="uk-select wid200" ng-model="obj.filterRace" ng-if="selection.race">
         <option  ng-repeat="races in obj.race" ng-bind="races" ng-value="races"></option>
-      </select>
+      </select>&nbsp;
 
       <label class="marg-r-20"><input class="uk-checkbox" ng-change="funcs.getPage()" ng-model="selection.sex" type="checkbox"> SEX</label> &nbsp;&nbsp;&nbsp;
       <select ng-change="funcs.getPage()" class="uk-select wid200" ng-model="obj.filterSex" ng-if="selection.sex">
         <option  ng-repeat="sexs in obj.sex" ng-bind="sexs" ng-value="sexs"></option>
-      </select>
+      </select>&nbsp;
 
       <div class="float-right">
         <button class="uk-button uk-button-default" ng-click="funcs.getPage('prev')">
