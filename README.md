@@ -29,8 +29,7 @@ gulp serve
 ```
 > INFO
 
-For backend ExpressJS is used and for front end angular js is used .
-Mongodb is used as a database . For angular Yeoman generator is used . Details can be found  [here](https://github.com/Swiip/generator-gulp-angular) . For design [Apple UIKit](https://getuikit.com/) is used.
+For backend ExpressJS is used and for front end angular js is used . [Google charts](http://angular-google-chart.github.io/angular-google-chart/) is used for displaying data in front end . [Mongodb](https://www.mongodb.com/) is used as a database . For angular, Yeoman generator is used . Details can be found  [here](https://github.com/Swiip/generator-gulp-angular) . For design [Apple UIKit](https://getuikit.com/) is used.
 
 For Caching and large amount of request Nginx is both used as a reverse proxy and loadbalancer.
 Backend Has two server running at
